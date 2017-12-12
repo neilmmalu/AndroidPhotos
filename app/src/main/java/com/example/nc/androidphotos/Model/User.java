@@ -10,7 +10,7 @@ import java.util.List;
 
 public class User implements Serializable{
 
-    public static final String sessionDataFile = "sessionData.dat";
+    public static final String sessionDataFile = "PhotoApp.dat";
 
     private String userName;
     private List<Album> albums;
