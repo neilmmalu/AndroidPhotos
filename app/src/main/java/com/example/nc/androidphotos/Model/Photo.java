@@ -75,8 +75,8 @@ public class Photo implements Serializable, Image{
 
     /**
      *
-     * @param Type of the tag
-     * @param Value of the tag
+     * @param tagType
+     * @param tagValue
      *
      */
     public void addTag(String tagType, String tagValue) {
@@ -89,15 +89,15 @@ public class Photo implements Serializable, Image{
 
     /**
      *
-     * @param index of the tag to be removed
+     * @param tag to be removed
      */
-    public void deleteTag(int index) {
-        this.tags.remove(index);
+    public void deleteTag(Tag tag) {
+        this.tags.remove(tag);
     }
 
     /**
      * Sets the caption for the photo
-     * @param The caption for the photo
+     * @param cap The caption for the photo
      */
     public void setCaption(String cap) {
         this.caption = cap;
@@ -112,7 +112,7 @@ public class Photo implements Serializable, Image{
     }
 
     /**
-     * @param The index of the tag required
+     * @param index of the tag
      * @return The tag at the index requested
      */
     public Tag getTag(int index) {

@@ -3,6 +3,14 @@ package com.example.nc.androidphotos.Model;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.OutputStreamWriter;
+import android.content.Context;
 
 /**
  * Created by Neil on 12/11/17.
@@ -105,5 +113,33 @@ public class User implements Serializable{
         return false;
     }
 
+    /**
+     * reads and initializes the application from the previous session
+     * @param fileName
+     * @param context
+     * @return
+     * @throws IOException
+     * @throws ClassNotFoundException
+     */
+    public static User read(String fileName, Context context) throws IOException, ClassNotFoundException {
+        FileInputStream fis = context.openFileInput(fileName);
+        ObjectInputStream ois = new ObjectInputStream(fis);
+        User obj = (User)ois.readObject();
+        ois.close();
+        return obj;
+    }
 
+    /**
+     * Writes the current state of this application to be read in the next session
+     * @param obj
+     * @param fileName
+     * @throws IOException
+     */
+    public static void write(Object obj, String fileName, Context context) throws IOException {
+        FileOutputStream fos = context.openFileOutput(fileName, Context.MODE_PRIVATE);
+        ObjectOutputStream oos = new ObjectOutputStream(fos);
+        oos.writeObject(obj);
+        oos.close();
+        fos.close();
+    }
 }

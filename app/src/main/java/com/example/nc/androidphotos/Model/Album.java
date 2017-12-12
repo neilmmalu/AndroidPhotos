@@ -14,9 +14,9 @@ public class Album implements Image, Serializable{
     private String albumName;
 
     private User user;
+    private boolean flip;
 
-
-    private boolean isSearchResult;
+    public boolean isSearchResult;
 
     /**
      * Constructor for the album class
@@ -84,8 +84,12 @@ public class Album implements Image, Serializable{
      *
      * @param photo to be added to the album
      */
-    public void addPhoto(Photo photo) {
-        this.album.add(photo);
+    public boolean addPhoto(Photo photo) {
+        if(!this.album.contains(photo)){
+            this.album.add(photo);
+            return true;
+        }
+        return false;
     }
 
     /**
@@ -98,5 +102,9 @@ public class Album implements Image, Serializable{
             return true;
         }
         return false;
+    }
+
+    public void flip(){
+        this.flip = !this.flip;
     }
 }

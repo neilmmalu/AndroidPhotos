@@ -4,11 +4,11 @@
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.dn.photoapp.Windows.MainActivity">
+    android:paddingBottom="16dp"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:paddingTop="16dp"
+    tools:context="com.example.nc.androidphotos.Activity.UserActivity">
 
     <LinearLayout
         android:orientation="vertical"
@@ -43,19 +43,20 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:orientation="vertical">
-            <Button
-                android:text="Add Album"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/addAlbumAction"
-                android:onClick="addAlbumAction" />
 
             <Button
-                android:text="Delete Album"
+                android:id="@+id/addAlbumButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/deleteAlbumAction"
-                android:onClick="deleteAlbumAction"/>
+                android:onClick="addAlbum"
+                android:text="Add Album" />
+
+            <Button
+                android:id="@+id/deleteAlbumButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="deleteAlbum"
+                android:text="Delete Album" />
         </LinearLayout>
 
         <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -63,19 +64,20 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:orientation="vertical">
-            <Button
-                android:text="View Album"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/viewAlbumAction"
-                android:onClick="viewAlbumAction" />
 
             <Button
-                android:text="Recaption Album"
+                android:id="@+id/viewAlbumButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/recaptionAlbumAction"
-                android:onClick="recaptionAlbumAction"/>
+                android:onClick="viewAlbum"
+                android:text="View Album" />
+
+            <Button
+                android:id="@+id/recaptionAlbumButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="recaptionAlbum"
+                android:text="Recaption Album" />
         </LinearLayout>
 
         <LinearLayout
@@ -83,12 +85,13 @@
             android:layout_height="match_parent"
             android:layout_weight="1.00"
             android:orientation="vertical">
+
             <Button
-                android:text="Search"
+                android:id="@+id/searchButton"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:id="@+id/searchAction"
-                android:onClick="searchAction"/>
+                android:onClick="search"
+                android:text="Search" />
         </LinearLayout>
     </LinearLayout>
 
